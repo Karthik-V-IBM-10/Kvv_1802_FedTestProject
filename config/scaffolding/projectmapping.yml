@@ -7,6 +7,26 @@ runtimes:
     type: flow
     stepId: /0
     reference: fld_111399110_stage00.projects.fld72fcb003a7647dcb65a6751f32e6f4b.WmPackageServiceProvider.GB_1:readGlobalvariable
+  - name: ertWorkflow
+    type: workflow
+    uid: fle6936120709a4a27971b16b030bbbaf5
+    stepId: a1
+    reference: services:add3Ints
+  - name: ertWorkflow
+    type: workflow
+    uid: fle6936120709a4a27971b16b030bbbaf5
+    stepId: a2
+    reference: project.kvv_1802_fedtest.integrations:cache
+  - name: ertWorkflow
+    type: workflow
+    uid: fle6936120709a4a27971b16b030bbbaf5
+    stepId: a3
+    reference: project.kvv_1802_fedtest.integrations:deepclonetest
+  - name: ertWorkflow
+    type: workflow
+    uid: fle6936120709a4a27971b16b030bbbaf5
+    stepId: a4
+    reference: project.kvv_1802_fedtest.integrations:tppdaf
 - runtimeAlias: Cloud Designtime
   assets:
   - name: cdtWorkflow
@@ -39,23 +59,3 @@ runtimes:
     path: /daf
     action: POST
     reference: fld_111399110_stage00.projects.fld72fcb003a7647dcb65a6751f32e6f4b.WmPackageServiceProvider.project.kvv_1802_fedtest.integrations:cache
-  - name: ertWorkflow
-    type: workflow
-    uid: fle6936120709a4a27971b16b030bbbaf5
-    stepId: a1
-    reference: services:add3Ints
-  - name: ertWorkflow
-    type: workflow
-    uid: fle6936120709a4a27971b16b030bbbaf5
-    stepId: a2
-    reference: project.kvv_1802_fedtest.integrations:cache
-  - name: ertWorkflow
-    type: workflow
-    uid: fle6936120709a4a27971b16b030bbbaf5
-    stepId: a3
-    reference: project.kvv_1802_fedtest.integrations:deepclonetest
-  - name: ertWorkflow
-    type: workflow
-    uid: fle6936120709a4a27971b16b030bbbaf5
-    stepId: a4
-    reference: project.kvv_1802_fedtest.integrations:tppdaf
