@@ -66,6 +66,26 @@ services:
     wpmRegistry: licensed
   - name: WmSalesforceRESTProvider
     version: 12.0.0.0.11
+- serviceName: project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections:MSSQL2
+  packages:
+  - name: Kvv_1802_FedTestProject
+    version: "1.0"
+  - name: TPP_services_in_FCS
+    version: "1.0"
+  - name: JMS2waySSL
+    version: "1.0"
+  - name: DADA_GlobalVariable1
+    version: "1.0"
+  - name: SSL_JDBC_Test
+    version: "1.0"
+  - name: JMSTest
+    version: "1.0"
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+  - name: WmSalesforceRESTProvider
+    version: 12.0.0.0.11
 - serviceName: project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections:MYSQL
   packages:
   - name: Kvv_1802_FedTestProject
@@ -381,6 +401,8 @@ configurationVariables:
   jdbc.Embedded-Database-Pool.password: "{AES}Zcw2EXTJgNDVmVzJO2Y3Bw=="
   ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.refreshAccessToken
   : "true"
+  ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL2.connectionManagerSettings.startupBackoffSecs
+  : "10"
   ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL.connectionManagerSettings.blockingTimeout
   : "1000"
   jdbc.Embedded-Database-Pool.snoopparms: ddtdbg.ProtocolTraceEnable=true;ddtdbg.ProtocolTraceMaxline=16;ddtdbg.ProtocolTraceLocation=logs/snoop/Embedded-Database-Pool.log;ddtdbg.ProtocolTraceShowTime=true
@@ -397,12 +419,20 @@ configurationVariables:
   : https://login.salesforce.com/services/oauth2/authorize
   ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.refreshToken
   : "{AES}iVEYOEICT1x7P9RL3dwVv0pQv1IODTw0Qm0vrSHPR8I0XZ0/KrBE7WODHo6AzR1637cjFT8vTWSxMJCq+8Fwx23ujlk6B/pLD2FnkHRwbbHw+MNh1fzWP9ra98cky/Z+"
+  ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL2.connectionEnabled
+  : "false"
+  ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL2.connectionSettings.password
+  : "{AES}X4QCAWgjWkTdMQvFA5XaqGmK1wuN3U1rA1B0VhuZoUw="
+  ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL2.connectionSettings.trustStore
+  : ""
   ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL.connectionSettings.driverType
   : Progress® DataDirect®
   ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MYSQL.connectionManagerSettings.poolable
   : "false"
   ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL.connectionManagerSettings.maximumPoolSize
   : "10"
+  ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL2.connectionSettings.datasourceClass
+  : com.wm.dd.jdbcx.sqlserver.SQLServerDataSource
   jdbc.Embedded-Database-Pool.poolThreshold: "0"
   ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL.connectionEnabled
   : "false"
@@ -430,14 +460,22 @@ configurationVariables:
   : refresh_token
   ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.socketLinger
   : "-1"
+  ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL2.connectionManagerSettings.expireTimeout
+  : "1000"
   jdbcfunc.ISInternal.failFastMode: true
   ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL.connectionManagerSettings.expireTimeout
   : "1000"
+  ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL2.connectionSettings.serverName
+  : 9.60.195.99
   ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.connectionEnabled
   : "true"
+  ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL2.connectionSettings.user
+  : sa
   jdbc.Embedded-Database-Pool.minConns: "0"
   ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.sockBuffSize
   : "8192"
+  ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL2.connectionManagerSettings.blockingTimeout
+  : "1000"
   ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.enableCompression
   : "false"
   ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.startupBackoffSecs
@@ -460,19 +498,31 @@ configurationVariables:
   : "0"
   ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.readTimeout
   : "30000"
+  ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL2.connectionSettings.transactionType
+  : NO_TRANSACTION
   ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MYSQL.connectionSettings.otherProperties
   : loginTimeout=60;driverType=thin;
   ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.poolable
   : "true"
+  ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL2.connectionSettings.databaseName
+  : SIQACloud
+  ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL2.connectionManagerSettings.maximumPoolSize
+  : "10"
   jdbc.Embedded-Database-Pool.waitingThread: "0"
+  ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL2.connectionManagerSettings.poolIncrementSize
+  : "1"
   ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.reuseAddr
   : "false"
+  ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL2.connectionManagerSettings.startupRetryCount
+  : "0"
   ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MYSQL.connectionSettings.datasourceClass
   : com.mysql.cj.jdbc.MysqlDataSource
   ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.maximumPoolSize
   : "10"
   ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.providerUrl
   : https://d0o000001qr6keac-dev-ed.my.salesforce.com
+  ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL2.connectionSettings.networkProtocol
+  : tcp
   jdbc.Embedded-Database-Pool.userid: APP
   ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL.connectionSettings.networkProtocol
   : tcp
@@ -484,6 +534,8 @@ configurationVariables:
   : NO_TRANSACTION
   ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL.connectionSettings.otherProperties
   : loginTimeout=60;driverType=thin;
+  ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL2.connectionManagerSettings.minimumPoolSize
+  : "1"
   jdbc.Embedded-Database-Pool.maxConns: "10"
   ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.minimumPoolSize
   : "1"
@@ -491,6 +543,8 @@ configurationVariables:
   : 9.46.196.248
   ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MYSQL.connectionManagerSettings.blockingTimeout
   : "1000"
+  ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL2.connectionSettings.otherProperties
+  : loginTimeout=60;driverType=thin;
   ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL.connectionSettings.serverName
   : 9.60.195.99
   jdbcfunc.ISDashboardStats.failFastMode: false
@@ -505,6 +559,10 @@ configurationVariables:
   : "{AES}8bc8/WHaL3dph5PtuD02009Twi827NgOvyLy8mkfF31b5gfhajCNPAG/2OxW9yx8fPwx12ONSDGw1NRjVAxIemmK1wuN3U1rA1B0VhuZoUw="
   ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MYSQL.connectionSettings.trustStore
   : ""
+  ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL2.connectionSettings.dbType
+  : MSSQL
+  ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL2.connectionManagerSettings.heartBeatInterval
+  : "0"
   ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MYSQL.connectionSettings.portNumber
   : "3306"
   ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.hostnameVerifier
@@ -517,6 +575,8 @@ configurationVariables:
   : "-1"
   ? iscloudstreamsconnectorservice.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..operations..actions:restTest.virtualServiceName
   : WmCloudStreams.RestVS
+  ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL2.connectionSettings.portNumber
+  : "1433"
   ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL.connectionManagerSettings.startupBackoffSecs
   : "10"
   ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.enableSNI
@@ -547,14 +607,20 @@ configurationVariables:
   : "1"
   ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.expireTimeout
   : "1000"
-  ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MYSQL.connectionManagerSettings.poolIncrementSize
-  : "1"
+  ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL2.connectionManagerSettings.poolable
+  : "false"
   ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MYSQL.connectionSettings.driverType
   : mysql
+  ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MYSQL.connectionManagerSettings.poolIncrementSize
+  : "1"
   ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MYSQL.connectionManagerSettings.maximumPoolSize
   : "10"
   ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL.connectionManagerSettings.poolIncrementSize
   : "1"
+  ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL2.connectionSettings.keyStore
+  : ""
+  ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL2.connectionSettings.driverType
+  : Progress® DataDirect®
   ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MSSQL.connectionManagerSettings.poolable
   : "false"
   ? artConnection.Kvv_1802_FedTestProject.project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.MYSQL.connectionSettings.password
