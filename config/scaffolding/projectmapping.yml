@@ -31,6 +31,11 @@ runtimes:
     type: flow
     stepId: /0
     reference: fld_111399110_stage00.projects.fld72fcb003a7647dcb65a6751f32e6f4b.WmPackageServiceProvider.SIQAJDBCAdapterTests.adapterServices:getData
+  - name: restTest
+    type: REST
+    path: /tppert
+    action: POST
+    reference: fld_111399110_stage00.projects.fld72fcb003a7647dcb65a6751f32e6f4b.WmPackageServiceProvider.services:add3Ints
 - runtimeAlias: Cloud Designtime
   assets:
   - name: cdtWorkflow
