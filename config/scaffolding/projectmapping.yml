@@ -32,3 +32,8 @@ runtimes:
     path: /tpp
     action: POST
     reference: fld_111399110_stage00.projects.fld72fcb003a7647dcb65a6751f32e6f4b.WmPackageServiceProvider.services:add3Ints
+  - name: restTest
+    type: REST
+    path: /daf
+    action: POST
+    reference: fld_111399110_stage00.projects.fld72fcb003a7647dcb65a6751f32e6f4b.WmPackageServiceProvider.project.kvv_1802_fedtest.integrations:cache
