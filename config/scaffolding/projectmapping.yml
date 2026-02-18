@@ -27,3 +27,8 @@ runtimes:
     type: flow
     stepId: /0
     reference: fld_111399110_stage00.projects.fld72fcb003a7647dcb65a6751f32e6f4b.WmPackageServiceProvider.GB_1:readGlobalvariable
+  - name: restTest
+    type: REST
+    path: /tpp
+    action: POST
+    reference: fld_111399110_stage00.projects.fld72fcb003a7647dcb65a6751f32e6f4b.WmPackageServiceProvider.services:add3Ints
