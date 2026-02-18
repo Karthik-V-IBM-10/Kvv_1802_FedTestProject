@@ -27,6 +27,11 @@ packages:
   gitUrl: https://github.com/manoj-jannu-IBM
   gitUsername: Karthik-V-IBM-10
   gitBranch: main
+- name: SSL_JDBC_Test
+  gitServerName: kvv
+  gitUrl: https://github.com/prabhakarsag
+  gitUsername: Karthik-V-IBM-10
+  gitBranch: main
 services:
 - serviceName: project.kvv_1802_fedtest.WmSalesforceRESTProvider.com_webmethods_cloudstreams_salesforce_rest_v60.connections:restTest
   packages:
@@ -105,9 +110,9 @@ services:
   - name: TPP_services_in_FCS
     version: "1.0"
 configurationVariables:
-  jdbc.Embedded-Database-Pool.waitingThread: "0"
   ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.enableSNI
   : "true"
+  jdbc.Embedded-Database-Pool.waitingThread: "0"
   ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.reuseAddr
   : "false"
   ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.validateAfterInactivity
@@ -122,18 +127,18 @@ configurationVariables:
   jdbcfunc.ISDashboardStats.connPoolAlias: Embedded-Database-Pool
   ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.socketStaleCheck
   : "true"
-  jdbcfunc.Xref.connPoolAlias: Embedded-Database-Pool
   jdbc.Embedded-Database-Pool.userid: APP
+  jdbcfunc.Xref.connPoolAlias: Embedded-Database-Pool
   jdbcfunc.ISInternal.connPoolAlias: Embedded-Database-Pool
   ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.startupRetryCount
   : "0"
   jdbc.Embedded-Database-Pool.password: "{AES}Zcw2EXTJgNDVmVzJO2Y3Bw=="
   ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.accessTokenRefreshURL
   : https://login.salesforce.com/services/oauth2/token
-  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.refreshAccessToken
-  : "true"
   ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.connectTimeout
   : "30000"
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.refreshAccessToken
+  : "true"
   ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.authorizationHeaderInTokenRefresh
   : "false"
   ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cx.grant_type
