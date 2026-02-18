@@ -1,6 +1,12 @@
 version: "1.0"
 projectName: Kvv_1802_FedTestProject
 runtimes:
+- runtimeAlias: kvv_1802_FedTest
+  assets:
+  - name: fld_111399110_stage00.projects.fld72fcb003a7647dcb65a6751f32e6f4b.integrations:gvTest
+    type: flow
+    stepId: /0
+    reference: fld_111399110_stage00.projects.fld72fcb003a7647dcb65a6751f32e6f4b.WmPackageServiceProvider.GB_1:readGlobalvariable
 - runtimeAlias: Cloud Designtime
   assets:
   - name: cdtWorkflow
@@ -23,10 +29,6 @@ runtimes:
     uid: fleff785e7cb634c21ba466a734fe66952
     stepId: a4
     reference: project.kvv_1802_fedtest.integrations:tppdaf
-  - name: fld_111399110_stage00.projects.fld72fcb003a7647dcb65a6751f32e6f4b.integrations:gvTest
-    type: flow
-    stepId: /0
-    reference: fld_111399110_stage00.projects.fld72fcb003a7647dcb65a6751f32e6f4b.WmPackageServiceProvider.GB_1:readGlobalvariable
   - name: restTest
     type: REST
     path: /tpp
