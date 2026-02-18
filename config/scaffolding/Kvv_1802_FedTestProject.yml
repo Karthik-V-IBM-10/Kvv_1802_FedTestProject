@@ -14,15 +14,26 @@ packages:
   gitUsername: Karthik-V-IBM-10
   gitBranch: main
 - name: WmSalesforceRESTProvider
+  version: 12.0.0.0.11
   wpmServer: https://packages.webmethods.io
   wpmRegistry: supported
 services:
+- serviceName: project.kvv_1802_fedtest.WmSalesforceRESTProvider.com_webmethods_cloudstreams_salesforce_rest_v60.connections:restTest
+  packages:
+  - name: Kvv_1802_FedTestProject
+    version: "1.0"
+  - name: TPP_services_in_FCS
+    version: "1.0"
+  - name: WmSalesforceRESTProvider
+    version: 12.0.0.0.11
 - serviceName: project.kvv_1802_fedtest.integrations:Sum
   packages:
   - name: Kvv_1802_FedTestProject
     version: "1.0"
   - name: TPP_services_in_FCS
     version: "1.0"
+  - name: WmSalesforceRESTProvider
+    version: 12.0.0.0.11
 - serviceName: pub.math:addInts
   packages:
   - name: WmPublic
@@ -37,6 +48,8 @@ services:
     version: "1.0"
   - name: TPP_services_in_FCS
     version: "1.0"
+  - name: WmSalesforceRESTProvider
+    version: 12.0.0.0.11
 - serviceName: pub.alert:emit
   packages:
   - name: WmPublic
@@ -47,12 +60,16 @@ services:
     version: "1.0"
   - name: TPP_services_in_FCS
     version: "1.0"
+  - name: WmSalesforceRESTProvider
+    version: 12.0.0.0.11
 - serviceName: project.kvv_1802_fedtest.integrations:deepclonetest
   packages:
   - name: Kvv_1802_FedTestProject
     version: "1.0"
   - name: TPP_services_in_FCS
     version: "1.0"
+  - name: WmSalesforceRESTProvider
+    version: 12.0.0.0.11
 - serviceName: pub.string:stringToBytes
   packages:
   - name: WmPublic
@@ -71,28 +88,108 @@ services:
     version: "1.0"
   - name: TPP_services_in_FCS
     version: "1.0"
+  - name: WmSalesforceRESTProvider
+    version: 12.0.0.0.11
 - serviceName: services:add3Ints
   packages:
   - name: TPP_services_in_FCS
     version: "1.0"
 configurationVariables:
   jdbc.Embedded-Database-Pool.waitingThread: "0"
-  jdbcfunc.ISDashboardStats.failFastMode: false
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.enableSNI
+  : "true"
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.reuseAddr
+  : "false"
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.validateAfterInactivity
+  : "1000"
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.keepAliveInterval
+  : "300000"
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.maximumPoolSize
+  : "10"
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.providerUrl
+  : https://d0o000001qr6keac-dev-ed.my.salesforce.com
+  jdbcfunc.Xref.failFastMode: true
+  jdbcfunc.ISDashboardStats.connPoolAlias: Embedded-Database-Pool
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.socketStaleCheck
+  : "true"
+  jdbcfunc.Xref.connPoolAlias: Embedded-Database-Pool
+  jdbc.Embedded-Database-Pool.userid: APP
+  jdbcfunc.ISInternal.connPoolAlias: Embedded-Database-Pool
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.startupRetryCount
+  : "0"
+  jdbc.Embedded-Database-Pool.password: "{AES}Zcw2EXTJgNDVmVzJO2Y3Bw=="
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.accessTokenRefreshURL
+  : https://login.salesforce.com/services/oauth2/token
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.refreshAccessToken
+  : "true"
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.connectTimeout
+  : "30000"
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.authorizationHeaderInTokenRefresh
+  : "false"
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cx.grant_type
+  : refresh_token
+  jdbc.Embedded-Database-Pool.snoopenabled: "false"
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.authorizationHeaderPrefix
+  : Bearer
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.socketLinger
+  : "-1"
   jdbc.Embedded-Database-Pool.snoopparms: ddtdbg.ProtocolTraceEnable=true;ddtdbg.ProtocolTraceMaxline=16;ddtdbg.ProtocolTraceLocation=logs/snoop/Embedded-Database-Pool.log;ddtdbg.ProtocolTraceShowTime=true
   jdbcfunc.ISInternal.failFastMode: true
   jdbc.Embedded-Database-Pool.maxConns: "10"
-  jdbc.Embedded-Database-Pool.spyenabled: "false"
-  jdbcfunc.Xref.failFastMode: true
-  jdbcfunc.ISDashboardStats.connPoolAlias: Embedded-Database-Pool
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.minimumPoolSize
+  : "1"
   jdbc.Embedded-Database-Pool.expireTime: "60000"
-  jdbc.Embedded-Database-Pool.poolThreshold: "0"
-  jdbcfunc.Xref.connPoolAlias: Embedded-Database-Pool
-  jdbc.Embedded-Database-Pool.userid: APP
   jdbc.Embedded-Database-Pool.useSSL: "false"
-  jdbcfunc.ISInternal.connPoolAlias: Embedded-Database-Pool
-  jdbc.Embedded-Database-Pool.password: "{AES}Zcw2EXTJgNDVmVzJO2Y3Bw=="
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.accessTokenRefreshURLRequest
+  : URL Query String
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.connectionEnabled
+  : "true"
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.poolIncrementSize
+  : "1"
   jdbc.Embedded-Database-Pool.minConns: "0"
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.expireTimeout
+  : "1000"
   jdbc.Embedded-Database-Pool.driverAlias: Embedded Database Driver
   jdbc.Embedded-Database-Pool.spyparms: SpyAttributes=(log=(file)logs/spy/Embedded-Database-Pool.log;logTName=yes;timestamp=yes)
   jdbc.Embedded-Database-Pool.dbURL: jdbc:derby:embedded;create=true
-  jdbc.Embedded-Database-Pool.snoopenabled: "false"
+  jdbcfunc.ISDashboardStats.failFastMode: false
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.sockBuffSize
+  : "8192"
+  jdbc.Embedded-Database-Pool.spyenabled: "false"
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.authorizationServerUrl
+  : https://login.salesforce.com/services/oauth2/authorize
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.enableCompression
+  : "false"
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.refreshToken
+  : "{AES}iVEYOEICT1x7P9RL3dwVv0pQv1IODTw0Qm0vrSHPR8I0XZ0/KrBE7WODHo6AzR1637cjFT8vTWSxMJCq+8Fwx23ujlk6B/pLD2FnkHRwbbHw+MNh1fzWP9ra98cky/Z+"
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.tcpNoDelay
+  : "false"
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth.consumerSecret
+  : "{AES}8bc8/WHaL3dph5PtuD02009Twi827NgOvyLy8mkfF31b5gfhajCNPAG/2OxW9yx8fPwx12ONSDGw1NRjVAxIemmK1wuN3U1rA1B0VhuZoUw="
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.startupBackoffSecs
+  : "10"
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth.accessToken
+  : "{AES}bzO+KX5xKoE0CKrgiYZryEJCc28x2QBODfJSJ6CleRFa+2DzxictbQsvDI2sVqSPyla7tLzWYTVeW/YHTq2TnIndWhV0t/tnSTjg5GXclIH2589LJj3W7DaymwFSO9GDthMYCsMRtvjnQ85gGn25EWmK1wuN3U1rA1B0VhuZoUw="
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.retryIfRequestSentOk
+  : "true"
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth.consumerId
+  : 3MVG9pe2TCoA1Pf6F9PMP1LEDsuYm6pfL6T8OD7YSQUQsx36uZNIjUH3BCzBZ8lgStKaUEITogkQ7hNByxJjv
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.hostnameVerifier
+  : org.apache.http.conn.ssl.DefaultHostnameVerifier
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.authenticationServerUrl
+  : https://login.salesforce.com/services/oauth2/token
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.readTimeout
+  : "30000"
+  jdbc.Embedded-Database-Pool.poolThreshold: "0"
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.blockTimeout
+  : "1000"
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.poolable
+  : "true"
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.scope
+  : offline_access api refresh_token
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.idleTimeout
+  : "-1"
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.retryCount
+  : "4"
+  ? cloudstreamsconnection.project..kvv_1802_fedtest..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.timeoutType
+  : auto
