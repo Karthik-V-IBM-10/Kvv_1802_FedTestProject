@@ -45,6 +45,11 @@ packages:
   version: 10.3.0.0.34
   wpmServer: https://packages.webmethods.io
   wpmRegistry: licensed
+- name: SIQAJDBCAdapterTests
+  gitServerName: MJANGIT
+  gitUrl: https://github.com/manoj-jannu-IBM
+  gitUsername: manoj-jannu-IBM
+  gitBranch: main
 services:
 - serviceName: project.kvv_1802_fedtest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections:MSSQL
   packages:
@@ -59,6 +64,8 @@ services:
   - name: SSL_JDBC_Test
     version: "1.0"
   - name: JMSTest
+    version: "1.0"
+  - name: SIQAJDBCAdapterTests
     version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
@@ -80,6 +87,8 @@ services:
     version: "1.0"
   - name: JMSTest
     version: "1.0"
+  - name: SIQAJDBCAdapterTests
+    version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
@@ -99,6 +108,8 @@ services:
   - name: SSL_JDBC_Test
     version: "1.0"
   - name: JMSTest
+    version: "1.0"
+  - name: SIQAJDBCAdapterTests
     version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
@@ -120,6 +131,8 @@ services:
     version: "1.0"
   - name: JMSTest
     version: "1.0"
+  - name: SIQAJDBCAdapterTests
+    version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
@@ -140,6 +153,8 @@ services:
     version: "1.0"
   - name: JMSTest
     version: "1.0"
+  - name: SIQAJDBCAdapterTests
+    version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
@@ -159,6 +174,8 @@ services:
   - name: SSL_JDBC_Test
     version: "1.0"
   - name: JMSTest
+    version: "1.0"
+  - name: SIQAJDBCAdapterTests
     version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
@@ -188,6 +205,8 @@ services:
     version: "1.0"
   - name: JMSTest
     version: "1.0"
+  - name: SIQAJDBCAdapterTests
+    version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
@@ -212,6 +231,8 @@ services:
     version: "1.0"
   - name: JMSTest
     version: "1.0"
+  - name: SIQAJDBCAdapterTests
+    version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
@@ -231,6 +252,8 @@ services:
   - name: SSL_JDBC_Test
     version: "1.0"
   - name: JMSTest
+    version: "1.0"
+  - name: SIQAJDBCAdapterTests
     version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
@@ -264,6 +287,8 @@ services:
     version: "1.0"
   - name: JMSTest
     version: "1.0"
+  - name: SIQAJDBCAdapterTests
+    version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
@@ -292,6 +317,8 @@ services:
     version: "1.0"
   - name: JMSTest
     version: "1.0"
+  - name: SIQAJDBCAdapterTests
+    version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
@@ -316,6 +343,8 @@ services:
     version: "1.0"
   - name: JMSTest
     version: "1.0"
+  - name: SIQAJDBCAdapterTests
+    version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
@@ -335,6 +364,8 @@ services:
   - name: SSL_JDBC_Test
     version: "1.0"
   - name: JMSTest
+    version: "1.0"
+  - name: SIQAJDBCAdapterTests
     version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
@@ -356,6 +387,8 @@ services:
     version: "1.0"
   - name: JMSTest
     version: "1.0"
+  - name: SIQAJDBCAdapterTests
+    version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
@@ -375,6 +408,8 @@ services:
   - name: SSL_JDBC_Test
     version: "1.0"
   - name: JMSTest
+    version: "1.0"
+  - name: SIQAJDBCAdapterTests
     version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
@@ -403,6 +438,8 @@ services:
   - name: SSL_JDBC_Test
     version: "1.0"
   - name: JMSTest
+    version: "1.0"
+  - name: SIQAJDBCAdapterTests
     version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
