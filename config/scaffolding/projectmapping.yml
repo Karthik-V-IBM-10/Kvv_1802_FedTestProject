@@ -27,6 +27,10 @@ runtimes:
     uid: fle6936120709a4a27971b16b030bbbaf5
     stepId: a4
     reference: project.kvv_1802_fedtest.integrations:tppdaf
+  - name: fld_111399110_stage00.projects.fld72fcb003a7647dcb65a6751f32e6f4b.integrations:tppdb
+    type: flow
+    stepId: /0
+    reference: fld_111399110_stage00.projects.fld72fcb003a7647dcb65a6751f32e6f4b.WmPackageServiceProvider.SIQAJDBCAdapterTests.adapterServices:getData
 - runtimeAlias: Cloud Designtime
   assets:
   - name: cdtWorkflow
